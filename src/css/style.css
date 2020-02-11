@@ -1,0 +1,56 @@
+.phone-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.phone-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    font-size: 50px;
+    background-color: #e6e6e6;
+    max-width: 40px;
+    border: 1px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.input-box {
+    font-size: 50px;
+    border: 2px #e6e6e6 solid;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.input-box:hover {
+    border-color: #e6e6e6bd;
+    cursor: pointer;
+}
+
+.x-box {
+
+}
+
+.dot-box {
+
+}
+
+.num-box {
+
+}
+
+.sym-box {
+    background-color: white;
+}
+
+.error {
+    background-color: red;
+}
+
+.error-box {
+    font-size: 50px;
+    color: red;
+}
