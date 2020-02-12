@@ -9,7 +9,7 @@
 ![Макет](https://github.com/mrniktarasov/phoneComponent/blob/master/images/index.jpeg)
 ## Установка
     npm install phone_component
-   или
+    или
     git clone https://github.com/mrniktarasov/phoneComponent
     cd phoneComponent
     npm i
