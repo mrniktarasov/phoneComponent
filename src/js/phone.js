@@ -19,31 +19,32 @@ export default class Phone {
 
   parseMask() {
     const chars = this.mask.split('');
+    let char;
     for (let i = 0; i < chars.length; i += 1) {
       switch (chars[i]) {
         case 'I':
-          const input = document.createElement('input');
-          input.type = 'text';
-          input.maxLength = '1';
-          input.placeholder = '_';
-          input.className = 'box input-box';
+          char = document.createElement('input');
+          char.type = 'text';
+          char.maxLength = '1';
+          char.placeholder = '_';
+          char.className = 'box input-box';
           this.inputs.push({
-            elem: input,
+            elem: char,
             index: i,
           });
-          this.phoneWrap.appendChild(input);
+          this.phoneWrap.appendChild(char);
           break;
         case 'X':
-          const x = document.createElement('div');
-          x.innerHTML = '<span>X</span>';
-          x.className = 'box x-box';
-          this.phoneWrap.appendChild(x);
+          char = document.createElement('div');
+          char.innerHTML = 'X';
+          char.className = 'box';
+          this.phoneWrap.appendChild(char);
           break;
         case '*':
-          const dot = document.createElement('div');
-          dot.innerHTML = '<span>•</span>';
-          dot.className = 'box dot-box';
-          this.phoneWrap.appendChild(dot);
+          char = document.createElement('div');
+          char.innerHTML = '•';
+          char.className = 'box';
+          this.phoneWrap.appendChild(char);
           break;
         case '0':
         case '1':
@@ -55,16 +56,16 @@ export default class Phone {
         case '7':
         case '8':
         case '9':
-          const num = document.createElement('div');
-          num.innerHTML = `<span>${chars[i]}</span>`;
-          num.className = 'box num-box';
-          this.phoneWrap.appendChild(num);
+          char = document.createElement('div');
+          char.innerHTML = chars[i];
+          char.className = 'box';
+          this.phoneWrap.appendChild(char);
           break;
         default:
-          const sym = document.createElement('div');
-          sym.innerHTML = `<span>${chars[i]}</span>`;
-          sym.className = 'box sym-box';
-          this.phoneWrap.appendChild(sym);
+          char = document.createElement('div');
+          char.innerHTML = chars[i];
+          char.className = 'box sym-box';
+          this.phoneWrap.appendChild(char);
           break;
       }
     }
@@ -88,19 +89,22 @@ export default class Phone {
       const currentInput = inputs[i];
       const currentTNchar = trueNumber[currentInput.index];
       const currentElem = currentInput.elem;
-      currentElem.onblur = function () {
-        if (!isNaN(this.value) && this.value !== currentTNchar) {
+      currentElem.onblur = () => {
+        if (currentElem.value !== currentTNchar) {
           inputs.map((input) => input.elem.classList.add('error'));
           error.style.display = 'block';
         }
       };
-      currentElem.onfocus = function () {
+      currentElem.onfocus = () => {
         inputs.map((input) => input.elem.classList.remove('error'));
         error.style.display = 'none';
       };
-      currentElem.onkeyup = function () {
+      currentElem.onkeyup = (event) => {
         let nextElem = currentElem;
         const ml = currentElem.getAttribute('maxlength');
+        if (event.keyCode === 39 || event.keyCode === 37) {
+          return 0;
+        }
         if (ml && currentElem.value.length >= ml) {
           do {
             nextElem = nextElem.nextSibling;
@@ -108,6 +112,16 @@ export default class Phone {
           if (nextElem) {
             nextElem.focus();
           }
+        }
+        return 0;
+      };
+      currentElem.onkeydown = (event) => {
+        if (currentElem.previousSibling.tagName === 'INPUT' && event.keyCode === 37) {
+          currentElem.previousSibling.focus();
+        } else if (currentElem.nextSibling.tagName === 'INPUT' && event.keyCode === 39) {
+          currentElem.nextSibling.focus();
+        } else if (event.keyCode === 8) {
+          currentElem.value = null;
         }
       };
     }

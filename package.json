@@ -4,7 +4,10 @@
   "description": "Компонент для ввода цифр номера телефона с возможной маскированной частью.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:js": "eslint src/**/*.js -c .eslintrc.js",
+		"lint:css": "stylelint 'src/**/*.{scss,css}' && stylelint --rd 'src/**/*.{scss,css}'",
+    "lint": "npm run lint:js",
+    "test": "npm run lint",
     "build": "webpack",
     "start": "webpack --watch"
   },
