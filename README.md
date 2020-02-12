@@ -1,6 +1,5 @@
-<snippet>
-  <content><![CDATA[
-# ${1:Phone Component}
+
+# 1:Phone Component
 Необходимо реализовать компонент для ввода цифр номера телефона с возможной маскированной частью. Длина маскированной части может быть произвольной.
 Компонент имеет несколько состояний (`normal`, `hover`, `active`, `error`), которые отражены в макетах.
 Особенности:
@@ -17,6 +16,3 @@ git clone https://github.com/mrniktarasov/phoneComponent
 TODO: Write credits
 ## License
 TODO: Write license
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
