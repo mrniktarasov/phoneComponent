@@ -32,9 +32,8 @@
     cursor: pointer;
 }
 
-.input-box:focus {
+.input-box:active {
     border-color: #141414bd;
-    cursor: pointer;
 }
 
 .sym-box {
