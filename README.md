@@ -6,7 +6,7 @@
 + Переход между полями ввода можно переключать при помощи левой и правой клавиш-стрелок
 + При заполнении фокус автоматически переходит на следующее поле 
 ## Макет
-![Макет](/image/index.jpeg)
+![Макет](mrniktarasov.github.io/phoneComponent/images/index.jpeg)
 ## Установка
     npm install phone_component
     или
