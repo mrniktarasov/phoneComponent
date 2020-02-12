@@ -11,7 +11,7 @@ npm install phone_component
 git clone https://github.com/mrniktarasov/phoneComponent
 ## Пример использования
   import Phone from './js/phone';
-
+  
   //Необходимо задать маску, правильный номер и элемент, к которому компонент будет добавлен
   const mask = '+7(985)0II-**-**';
   const elem = document.querySelector('.phone-box');
