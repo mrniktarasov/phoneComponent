@@ -6,9 +6,9 @@
 + Переход между полями ввода можно переключать при помощи левой и правой клавиш-стрелок
 + При заполнении фокус автоматически переходит на следующее поле 
 ## Установка
-npm install phone_component
-или
-git clone https://github.com/mrniktarasov/phoneComponent
+    npm install phone_component
+    или
+    git clone https://github.com/mrniktarasov/phoneComponent
 ## Пример использования
     import Phone from './js/phone';
   
@@ -37,8 +37,6 @@ git clone https://github.com/mrniktarasov/phoneComponent
     phone.start();
     
 ## API
-mask - маска номера
-elem - элемент, к которому компонент будет прикреплен
-trueNumber - истинный номер, без маски
-## License
-
+* mask - маска номера
+* elem - элемент, к которому компонент будет прикреплен
+* trueNumber - истинный номер, без маски
