@@ -2,3 +2,5 @@
 /build/
 /Docker/
 .eslintrc.js
+.storybook
+/stories/
