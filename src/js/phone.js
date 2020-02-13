@@ -32,19 +32,19 @@ export default class Phone {
             elem: char,
             index: i,
           });
-          this.phoneWrap.appendChild(char);
+          this.addElem(char);
           break;
         case 'X':
           char = document.createElement('div');
           char.innerHTML = 'X';
           char.className = 'box';
-          this.phoneWrap.appendChild(char);
+          this.addElem(char);
           break;
         case '*':
           char = document.createElement('div');
           char.innerHTML = '•';
           char.className = 'box';
-          this.phoneWrap.appendChild(char);
+          this.addElem(char);
           break;
         case '0':
         case '1':
@@ -59,16 +59,21 @@ export default class Phone {
           char = document.createElement('div');
           char.innerHTML = chars[i];
           char.className = 'box';
-          this.phoneWrap.appendChild(char);
+          this.addElem(char);
           break;
         default:
           char = document.createElement('div');
           char.innerHTML = chars[i];
           char.className = 'box sym-box';
-          this.phoneWrap.appendChild(char);
+          this.addElem(char);
           break;
       }
     }
+    return 0;
+  }
+
+  addElem(elem) {
+    this.phoneWrap.appendChild(elem);
     return 0;
   }
 
