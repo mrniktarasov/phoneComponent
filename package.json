@@ -41,5 +41,10 @@
       "node_modules/.bin/eslint --max-warnings=0",
       "git add"
     ]
-  }  
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+ }  
 }
