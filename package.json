@@ -1,6 +1,6 @@
 {
   "name": "phone_number_veification_component",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Компонент для ввода цифр номера телефона с возможной маскированной частью.",
   "main": "index.js",
   "scripts": {
