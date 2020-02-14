@@ -92,13 +92,20 @@ export default class Phone {
     const { inputs, error } = this;
     for (let i = 0; i < inputs.length; i += 1) {
       const currentInput = inputs[i];
-      const currentTNchar = trueNumber[currentInput.index];
       const currentElem = currentInput.elem;
-      currentElem.onblur = () => {
-        if (currentElem.value !== currentTNchar) {
+      currentElem.onchange = () => {
+        let flag = 0;
+        inputs.map((input) => {
+          if (input.elem.value !== '' && input.elem.value !== trueNumber[input.index]) {
+            flag += 1;
+          }
+          return 0;
+        });
+        if (flag === inputs.length) {
           inputs.map((input) => input.elem.classList.add('error'));
           error.style.display = 'block';
         }
+        return 0;
       };
       currentElem.onfocus = () => {
         inputs.map((input) => input.elem.classList.remove('error'));
