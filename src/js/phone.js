@@ -94,14 +94,18 @@ export default class Phone {
       const currentInput = inputs[i];
       const currentElem = currentInput.elem;
       currentElem.onchange = () => {
-        let flag = 0;
+        let trueAnsws = 0;
+        let filling = 0;
         inputs.map((input) => {
-          if (input.elem.value !== '' && input.elem.value !== trueNumber[input.index]) {
-            flag += 1;
+          if (input.elem.value !== '') {
+            filling += 1;
+            if (input.elem.value === trueNumber[input.index]) {
+              trueAnsws += 1;
+            }
           }
           return 0;
         });
-        if (flag === inputs.length) {
+        if (filling === inputs.length && trueAnsws < inputs.length) {
           inputs.map((input) => input.elem.classList.add('error'));
           error.style.display = 'block';
         }
@@ -128,10 +132,16 @@ export default class Phone {
         return 0;
       };
       currentElem.onkeydown = (event) => {
-        if (currentElem.previousSibling.tagName === 'INPUT' && event.keyCode === 37) {
-          currentElem.previousSibling.focus();
-        } else if (currentElem.nextSibling.tagName === 'INPUT' && event.keyCode === 39) {
-          currentElem.nextSibling.focus();
+        if (event.keyCode === 37) {
+          const j = i - 1;
+          if (j >= 0) {
+            inputs[j].elem.focus();
+          }
+        } else if (event.keyCode === 39) {
+          const j = i + 1;
+          if (j < inputs.length) {
+            inputs[j].elem.focus();
+          }
         } else if (event.keyCode === 8) {
           currentElem.value = null;
         }
