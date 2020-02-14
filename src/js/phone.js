@@ -143,7 +143,7 @@ export default class Phone {
             inputs[j].elem.focus();
           }
         } else if (event.keyCode === 8) {
-          currentElem.value = null;
+          currentElem.value = '';
         }
       };
     }
