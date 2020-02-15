@@ -5,6 +5,13 @@
 Особенности:
 + Переход между полями ввода можно переключать при помощи левой и правой клавиш-стрелок
 + При заполнении фокус автоматически переходит на следующее поле 
+## Скриншоты
+### Неправильный номер
+![Макет](https://github.com/mrniktarasov/phoneComponent/blob/master/images/ex_1.jpeg)
+![Макет](https://github.com/mrniktarasov/phoneComponent/blob/master/images/ex_2.jpeg)
+![Макет](https://github.com/mrniktarasov/phoneComponent/blob/master/images/ex_3.jpeg)
+### Правильный номер
+![Макет](https://github.com/mrniktarasov/phoneComponent/blob/master/images/ex_4.jpeg)
 ## Макет
 ![Макет](https://github.com/mrniktarasov/phoneComponent/blob/master/images/index.jpeg)
 ## Установка
